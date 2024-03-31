@@ -14,9 +14,16 @@ public class MakeOrderScreen extends JFrame {
 
     private JTextField txtProductQuantity = new JTextField(10);
 
+    private JButton btnAddProduct = new JButton("Add Product");
+
     private DefaultTableModel tblProductModel;
     private JTable tblProduct;
 
+    private DefaultTableModel tblSelectedProductModel;
+
+    private JTable tblSelectedProduct;
+
+    public JButton getBtnAddProduct() {return btnAddProduct;}
     public JTextField getTxtProductID() {return txtProductID;}
 
     public JTextField getTxtProductQuantity() {return txtProductQuantity;}
@@ -25,14 +32,16 @@ public class MakeOrderScreen extends JFrame {
 
     public void setTxtProductQuantity(String value) {txtProductQuantity.setText(value);}
 
-    public MakeOrderScreen() {
-        System.out.println("MakeOrder Screen Construstor");
+
+
+    public MakeOrderScreen() {System.out.println("MakeOrder Screen Constructor");
 
         this.setSize(850, 650);
         this.setTitle("Store Management System");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(true);
 
+        // Product table setup
         tblProductModel = new DefaultTableModel();
         tblProductModel.addColumn("productID");
         tblProductModel.addColumn("productName");
@@ -41,11 +50,20 @@ public class MakeOrderScreen extends JFrame {
 
         tblProduct = new JTable(tblProductModel);
         JScrollPane scrollPane = new JScrollPane(tblProduct);
-        add(scrollPane, BorderLayout.NORTH);
 
+        // Selected Product table setup
+        tblSelectedProductModel = new DefaultTableModel();
+        tblSelectedProductModel.addColumn("Selected productID");
+        tblSelectedProductModel.addColumn("Selected prodcut Quantity");
 
+        tblSelectedProduct = new JTable(tblSelectedProductModel);
+        JScrollPane selectedProductScrollPane = new JScrollPane(tblSelectedProduct);
 
-        JPanel inputPanel = new JPanel(new GridLayout(4, 2, 5,5 ));
+        JPanel tablePanel = new JPanel(new GridLayout(1, 2));
+        tablePanel.add(scrollPane);
+        tablePanel.add(selectedProductScrollPane);
+
+        JPanel inputPanel = new JPanel(new GridLayout(3, 2, 5, 5));
         inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         inputPanel.add(new JLabel("Enter Product ID:"));
@@ -54,36 +72,13 @@ public class MakeOrderScreen extends JFrame {
         inputPanel.add(new JLabel("Enter Product Quantity:"));
         inputPanel.add(txtProductQuantity);
 
+        inputPanel.add(btnAddProduct);
 
+        JPanel contentPanel = new JPanel(new BorderLayout());
+        contentPanel.add(tablePanel, BorderLayout.CENTER);
+        contentPanel.add(inputPanel, BorderLayout.SOUTH);
 
-//        inputPanel.add(new JLabel("Supplier ID:"));
-//        inputPanel.add(txtSupplierID);
-//
-//        inputPanel.add(new JLabel("Supplier Name"));
-//        inputPanel.add(txtSupplierName);
-//
-//        inputPanel.add(new JLabel("Supplier Address"));
-//        inputPanel.add(txtSupplierAddress);
-//
-//        inputPanel.add(new JLabel("Supplier Phone"));
-//        inputPanel.add(txtSupplierPhone);
-
-
-
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 4, 5, 5)); // 2 rows, 1 column, with 5 pixels gap
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
-
-//        buttonPanel.add(btnAddSupplier);
-//        buttonPanel.add(btnUpdateSupplier);
-//        buttonPanel.add(btnLoadSupplier);
-//        buttonPanel.add(btnDeleteSupplier);
-
-
-
-        this.add(inputPanel, BorderLayout.CENTER);
-        this.add(buttonPanel, BorderLayout.SOUTH);
-
-
+        this.add(contentPanel);
     }
 
     public void updateTable(List<Product> productList) {
@@ -100,4 +95,15 @@ public class MakeOrderScreen extends JFrame {
         }
 
     }
+
+    public void displaySelectedProduct(String productID, int productQuantity) {
+//        tblSelectedProductModel.setRowCount(0);
+        tblSelectedProductModel.addRow(new Object[]{productID, productQuantity});
+
+        setTxtProductID("");
+        setTxtProductQuantity("");
+
+    }
+
+
 }

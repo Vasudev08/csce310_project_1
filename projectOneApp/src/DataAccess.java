@@ -22,6 +22,23 @@ public class DataAccess {
 
     }
 
+//    OrderItem.getProductID();
+
+    private List<OrderItem> orderItems = new ArrayList<>();
+
+    public void addSelectedProduct(String productID, int productQuantity) {
+        orderItems.add(new OrderItem(productID, productQuantity));
+        System.out.println(orderItems);
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+
+
+
+
 
     public Customer loadCustomer(int customerID) {
         try {
