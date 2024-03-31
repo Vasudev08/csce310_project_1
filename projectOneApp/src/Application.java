@@ -2,6 +2,8 @@
 import Models.Customer;
 import Views.CustomerScreen;
 import Views.MainScreen;
+import Views.ProductScreen;
+import Views.SupplierScreen;
 
 import javax.xml.crypto.Data;
 import java.sql.*;
@@ -16,10 +18,25 @@ public class Application {
     private MainScreen mainScreen = new MainScreen();
     private CustomerScreen customerScreen = new CustomerScreen();
 
+    private ProductScreen productScreen = new ProductScreen();
+
+    private SupplierScreen supplierScreen = new SupplierScreen();
+
     private MainController mainController;
+    private CustomerController customerController;
+
+    private ProductController productController;
 
     public CustomerScreen getCustomerScreen() {
         return customerScreen;
+    }
+
+    public ProductScreen getProductScreen() {
+        return  productScreen;
+    }
+
+    public SupplierScreen getSupplierScreen() {
+        return supplierScreen;
     }
 
     public MainScreen getMainScreen() {
@@ -67,6 +84,8 @@ public class Application {
         }
 
         mainController = new MainController(mainScreen, dataAccess);
+        customerController = new CustomerController(customerScreen, dataAccess);
+        productController = new ProductController(productScreen, dataAccess);
     }
 
 
@@ -79,10 +98,5 @@ public class Application {
         System.out.println(customer.getCustomerName());
 
         Application.getInstance().getMainScreen().setVisible(true);
-
-
-
-
-
     }
 }

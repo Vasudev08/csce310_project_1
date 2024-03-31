@@ -7,11 +7,18 @@ import java.awt.event.ActionListener;
 
 public class MainScreen extends JFrame {
     private JButton btnCustomer = new JButton("Customer");
+    private JButton btnProduct = new JButton("Product");
+    private JButton btnSupplier = new JButton("Supplier");
+
 
 
     public JButton getBtnCustomer() {
         return btnCustomer;
     }
+
+    public JButton getBtnProduct() {return btnProduct;}
+
+    public JButton getBtnSupplier() {return btnSupplier;}
 
 
     public MainScreen() {
@@ -25,6 +32,8 @@ public class MainScreen extends JFrame {
 
         JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 5, 5)); // 2 rows, 1 column, with 5 pixels gap
         buttonPanel.add(btnCustomer);
+        buttonPanel.add(btnProduct);
+        buttonPanel.add(btnSupplier);
 
 
         // Connect the above two button to two different views

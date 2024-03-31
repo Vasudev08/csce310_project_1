@@ -74,7 +74,7 @@ public class CustomerScreen extends JFrame {
         System.out.println("Customer Screen Constructor");
 
         this.setSize(500, 200);
-        this.setTitle("Project Management System");
+        this.setTitle("Store Management System");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(true);
 
