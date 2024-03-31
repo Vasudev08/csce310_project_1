@@ -1,10 +1,15 @@
 import Models.Customer;
+import Models.Orders;
 import Models.Product;
 import Models.Supplier;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class DataAccess {
 
@@ -424,6 +429,176 @@ public class DataAccess {
             System.out.println("Database access error!");
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public int getLastOrderID() {
+        int lastOrderID = -1;
+
+        try {
+            String query = "SELECT MAX(orderID) FROM ProductPayment";
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                lastOrderID = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            statement.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error retrieving last orderId: " + e.getMessage());
+
+        }
+
+        return lastOrderID;
+    }
+
+    public double getOrderCost() {
+        double cost = 0;
+        orderItems = getOrderItems();
+
+        for (OrderItem orderItem : orderItems) {
+            int pid = parseInt(orderItem.getProductID());
+            int pqua = orderItem.getProductQuantity();
+
+            Product product = loadProduct(pid);
+
+            cost +=  (product.getProductCost() * pqua);
+
+        }
+
+        return cost;
+    }
+
+    public void addOrder(int orderID, int customerID, String payment) {
+        System.out.println("working add Order");
+
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO ProductPayment VALUES (?, ?, ?, ?, ?)");
+            statement.setInt(1, orderID);
+            statement.setString(2, new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+            statement.setInt(3, customerID);
+            statement.setDouble(4, getOrderCost());
+            statement.setString(5, payment);
+
+
+            statement.execute();
+            statement.close();
+
+
+
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+        }
+
+        orderItems = getOrderItems();
+
+        for (OrderItem orderItem : orderItems) {
+            int pid = parseInt(orderItem.getProductID());
+            int pqua = orderItem.getProductQuantity();
+
+            try {
+                PreparedStatement statement = connection.prepareStatement("INSERT INTO ProductOrder VALUES (?, ?, ?)");
+                statement.setInt(1, orderID);
+                statement.setInt(2, pid);
+                statement.setInt(3, pqua);
+
+                statement.execute();
+                statement.close();
+            } catch (SQLException e) {
+                System.out.println("Database access error!");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void addPayment(int cid, String customerCardNumber, String customerCardExpiry) {
+        System.out.println("Adding Payment method");
+
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO CustomerPayment VALUES (?, ?, ?)");
+            statement.setInt(1, cid);
+            statement.setString(2, customerCardNumber);
+            statement.setString(3, customerCardExpiry);
+
+            statement.execute();
+            statement.close();
+
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+        }
+
+    }
+
+    public Orders loadOrder(int orderID) {
+        try {
+            String query = "SELECT * FROM ProductPayment WHERE orderID = " + orderID;
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                Orders orders = new Orders();
+
+                orders.setOrderDate(resultSet.getString(2));
+                orders.setCustomerID(String.valueOf(resultSet.getInt(3)));
+                orders.setPaymentType(resultSet.getString(5));
+
+
+
+                resultSet.close();
+                statement.close();
+
+                return orders;
+            }
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+
+        }
+        return null;
+    }
+
+
+    public boolean updateOrder(Orders orders) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(  "UPDATE ProductPayment SET orderID = ?, orderDate = ?, customerID = ? WHERE orderID = ?");
+            statement.setInt(1, orders.getOrderID());
+            statement.setString(2, orders.getOrderDate());
+            String cid;
+            cid = orders.getCustomerID();
+//            System.out.println(cid);
+//            System.out.println(orders.getOrderDate());
+            statement.setString(3, cid);
+            statement.setInt(4, orders.getOrderID());
+
+
+
+
+            int rows = statement.executeUpdate();
+            statement.close();
+            System.out.println((String.format("Orders Updated: %s", orders.getOrderID())) );
+
+            if (rows > 0) {
+                System.out.println("Orders Data Updated");
+                return true;
+            } else {
+                System.out.println("No Orders found with the given ID");
+                return false;
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false; // cannot save!
         }
     }
 

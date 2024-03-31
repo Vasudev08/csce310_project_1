@@ -1,18 +1,22 @@
 package Models;
 
+import javax.swing.*;
+
 public class Orders {
 
     private int orderID;
 
     private String orderDate;
 
-    private int customerID;
+    private String customerID;
 
     private int productID;
 
     private int orderQuantity;
 
     private double orderCost;
+
+    private String PaymentType;
 
     public int getOrderID() {
         return orderID;
@@ -26,12 +30,23 @@ public class Orders {
         return orderDate;
     }
 
+    public String getPaymentType() {
+        return PaymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        PaymentType = paymentType;
+    }
+
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
-    public int getCustomerID() {
+    public String getCustomerID() {
         return customerID;
+    }
+
+    public void setCustomerID(String value) {this.customerID = value;
     }
 
     public int getProductID() {

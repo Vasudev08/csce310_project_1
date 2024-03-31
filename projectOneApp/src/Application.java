@@ -21,6 +21,13 @@ public class Application {
 
     private MakeOrderScreen makeOrderScreen = new MakeOrderScreen();
 
+    private PaymentScreen paymentScreen = new PaymentScreen();
+
+    private EditOrderScreen editOrderScreen = new EditOrderScreen();
+
+    private EditPaymentScreen editPaymentScreen = new EditPaymentScreen();
+
+
     private MainController mainController;
     private CustomerController customerController;
 
@@ -30,9 +37,19 @@ public class Application {
 
     private MakeOrderController makeOrderController;
 
+    private PaymentController paymentController;
+
+    private EditOrderController editOrderController;
+
     public CustomerScreen getCustomerScreen() {
         return customerScreen;
     }
+
+    public EditPaymentScreen getEditPaymentScreen() {
+        return editPaymentScreen;
+    }
+
+    public EditOrderScreen getEditOrderScreen() {return editOrderScreen;}
 
     public MakeOrderScreen getMakeOrderScreen() {
         return makeOrderScreen;
@@ -48,6 +65,10 @@ public class Application {
 
     public MainScreen getMainScreen() {
         return mainScreen;
+    }
+
+    public PaymentScreen getPaymentScreen() {
+        return paymentScreen;
     }
 
     public Connection getConnection() {
@@ -94,7 +115,9 @@ public class Application {
         customerController = new CustomerController(customerScreen, dataAccess);
         productController = new ProductController(productScreen, dataAccess);
         supplierController = new SupplierController(supplierScreen, dataAccess);
-        makeOrderController = new MakeOrderController(makeOrderScreen, dataAccess);
+        makeOrderController = new MakeOrderController(makeOrderScreen, paymentScreen,dataAccess);
+        paymentController = new PaymentController(paymentScreen, dataAccess);
+        editOrderController = new EditOrderController(editOrderScreen, dataAccess);
 
         // TO-DO
         // Create an order screen where you input customer, input product and product quantity

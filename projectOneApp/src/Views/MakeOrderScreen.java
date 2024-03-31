@@ -16,6 +16,8 @@ public class MakeOrderScreen extends JFrame {
 
     private JButton btnAddProduct = new JButton("Add Product");
 
+    private JButton btnPayment = new JButton("Payment");
+
     private DefaultTableModel tblProductModel;
     private JTable tblProduct;
 
@@ -24,6 +26,8 @@ public class MakeOrderScreen extends JFrame {
     private JTable tblSelectedProduct;
 
     public JButton getBtnAddProduct() {return btnAddProduct;}
+
+    public  JButton getBtnPayment() {return btnPayment;}
     public JTextField getTxtProductID() {return txtProductID;}
 
     public JTextField getTxtProductQuantity() {return txtProductQuantity;}
@@ -63,7 +67,7 @@ public class MakeOrderScreen extends JFrame {
         tablePanel.add(scrollPane);
         tablePanel.add(selectedProductScrollPane);
 
-        JPanel inputPanel = new JPanel(new GridLayout(3, 2, 5, 5));
+        JPanel inputPanel = new JPanel(new GridLayout(4, 2, 5, 5));
         inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         inputPanel.add(new JLabel("Enter Product ID:"));
@@ -73,6 +77,7 @@ public class MakeOrderScreen extends JFrame {
         inputPanel.add(txtProductQuantity);
 
         inputPanel.add(btnAddProduct);
+        inputPanel.add(btnPayment);
 
         JPanel contentPanel = new JPanel(new BorderLayout());
         contentPanel.add(tablePanel, BorderLayout.CENTER);
