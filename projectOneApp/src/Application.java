@@ -1,9 +1,6 @@
 
 import Models.Customer;
-import Views.CustomerScreen;
-import Views.MainScreen;
-import Views.ProductScreen;
-import Views.SupplierScreen;
+import Views.*;
 
 import javax.xml.crypto.Data;
 import java.sql.*;
@@ -22,13 +19,23 @@ public class Application {
 
     private SupplierScreen supplierScreen = new SupplierScreen();
 
+    private MakeOrderScreen makeOrderScreen = new MakeOrderScreen();
+
     private MainController mainController;
     private CustomerController customerController;
 
     private ProductController productController;
 
+    private SupplierController supplierController;
+
+    private MakeOrderController makeOrderController;
+
     public CustomerScreen getCustomerScreen() {
         return customerScreen;
+    }
+
+    public MakeOrderScreen getMakeOrderScreen() {
+        return makeOrderScreen;
     }
 
     public ProductScreen getProductScreen() {
@@ -86,6 +93,16 @@ public class Application {
         mainController = new MainController(mainScreen, dataAccess);
         customerController = new CustomerController(customerScreen, dataAccess);
         productController = new ProductController(productScreen, dataAccess);
+        supplierController = new SupplierController(supplierScreen, dataAccess);
+        makeOrderController = new MakeOrderController(makeOrderScreen, dataAccess);
+
+        // TO-DO
+        // Create an order screen where you input customer, input product and product quantity
+        // have to display product in the table, two inputs to select product and product quantity
+        // and once select an product and product quantity add it to an order list/array
+        // here, for now we will manually input a existing customerID but in future, the user can
+        // select whether it's an new customer or existing customer, if new add all the details of an cutsomer in
+        // next page
     }
 
 

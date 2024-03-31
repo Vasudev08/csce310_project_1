@@ -9,6 +9,7 @@ public class MainScreen extends JFrame {
     private JButton btnCustomer = new JButton("Customer");
     private JButton btnProduct = new JButton("Product");
     private JButton btnSupplier = new JButton("Supplier");
+    private JButton btnMakeOrder = new JButton("Make Order");
 
 
 
@@ -20,6 +21,8 @@ public class MainScreen extends JFrame {
 
     public JButton getBtnSupplier() {return btnSupplier;}
 
+    public JButton getBtnMakeOrder() {return btnMakeOrder;}
+
 
     public MainScreen() {
         System.out.println("MainScreen Constructor"); // Debugging statement
@@ -30,10 +33,11 @@ public class MainScreen extends JFrame {
 
         //this.getContentPane().add(new JLabel ("Project Management System"));
 
-        JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 5, 5)); // 2 rows, 1 column, with 5 pixels gap
+        JPanel buttonPanel = new JPanel(new GridLayout(4, 1, 5, 5)); // 2 rows, 1 column, with 5 pixels gap
         buttonPanel.add(btnCustomer);
         buttonPanel.add(btnProduct);
         buttonPanel.add(btnSupplier);
+        buttonPanel.add(btnMakeOrder);
 
 
         // Connect the above two button to two different views

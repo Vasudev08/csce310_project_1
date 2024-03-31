@@ -15,6 +15,7 @@ public class MainController implements ActionListener {
         this.mainScreen.getBtnCustomer().addActionListener(this);
         this.mainScreen.getBtnProduct().addActionListener(this);
         this.mainScreen.getBtnSupplier().addActionListener(this);
+        this.mainScreen.getBtnMakeOrder().addActionListener(this);
     }
 
 
@@ -34,6 +35,11 @@ public class MainController implements ActionListener {
             System.out.println("Supplier Button Pressed");
             this.mainScreen.setVisible(false);
             Application.getInstance().getSupplierScreen().setVisible(true);
+
+        } else if (e.getSource() == mainScreen.getBtnMakeOrder()) {
+            System.out.println("MakeOrder Button Pressed");
+            this.mainScreen.setVisible(false);
+            Application.getInstance().getMakeOrderScreen().setVisible(true);
 
         }
 

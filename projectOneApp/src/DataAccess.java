@@ -1,5 +1,6 @@
 import Models.Customer;
 import Models.Product;
+import Models.Supplier;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -139,6 +140,40 @@ public class DataAccess {
         }
     }
 
+    public List<Product> getAllProduct() {
+        List<Product> productList = new ArrayList<>();
+
+        try {
+            String query = "SELECT * FROM Product";
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                Product product = new Product();
+
+                product.setProductID(resultSet.getInt(1));
+                product.setProductName(resultSet.getString(2));
+                product.setProductQuantity(resultSet.getInt(3));
+                product.setProductCost(resultSet.getDouble(4));
+
+                productList.add(product);
+            }
+
+            resultSet.close();
+            statement.close();
+
+
+
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+//            throw new RuntimeException(e);
+        }
+
+        return productList;
+    }
     public Product loadProduct(int productID) {
         try {
             String query = "SELECT * FROM Product WHERE productID = " + productID;
@@ -249,6 +284,124 @@ public class DataAccess {
                 return false;
             }
 
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public boolean addSupplier(Supplier supplier) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Supplier WHERE supplierID = ?");
+            statement.setInt(1, supplier.getSupplierID());
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) { // this product exists, update its fields
+                statement = connection.prepareStatement("UPDATE Supplier SET supplierID = ?, supplierName = ?, supplierAddress = ?, supplierPhone = ? WHERE supplierID = ?");
+                statement.setInt(1, supplier.getSupplierID());
+                statement.setString(2, supplier.getSupplierName());
+                statement.setString(3, supplier.getSupplierAddress());
+                statement.setString(4, supplier.getSupplierPhone());
+                statement.setInt(5, supplier.getSupplierID());
+
+
+            }
+            else { // this product does not exist, use insert into
+                statement = connection.prepareStatement("INSERT INTO Supplier VALUES (?, ?, ?, ?)");
+                statement.setInt(1, supplier.getSupplierID());
+                statement.setString(2, supplier.getSupplierName());
+                statement.setString(3, supplier.getSupplierAddress());
+                statement.setString(4, supplier.getSupplierPhone());
+
+            }
+            statement.execute();
+            resultSet.close();
+            statement.close();
+            return true;        // save successfully
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false; // cannot save!
+        }
+
+    }
+
+    public boolean updateSupplier(Supplier supplier) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(  "UPDATE Supplier SET supplierID = ?, supplierName = ?, supplierAddress = ?, supplierPhone = ? WHERE supplierID = ?");
+            statement.setInt(1, supplier.getSupplierID());
+            statement.setString(2, supplier.getSupplierName());
+            statement.setString(3, supplier.getSupplierAddress());
+            statement.setString(4, supplier.getSupplierPhone());
+            statement.setInt(5, supplier.getSupplierID());
+
+            int rows = statement.executeUpdate();
+            statement.close();
+            System.out.println((String.format("Product Updated: %s", supplier.getSupplierID())) );
+
+            if (rows > 0) {
+                System.out.println("Supplier Data Updated");
+                return true;
+            } else {
+                System.out.println("No Supplier found with the given ID");
+                return false;
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false; // cannot save!
+        }
+    }
+
+
+    public Supplier loadSupplier(int supplierID) {
+        try {
+            String query = "SELECT * FROM Supplier WHERE supplierID = " + supplierID;
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                Supplier supplier = new Supplier();
+
+                supplier.setSupplierID(resultSet.getInt(1));
+                supplier.setSupplierName(resultSet.getString(2));
+                supplier.setSupplierAddress(resultSet.getString(3));
+                supplier.setSupplierPhone(resultSet.getString(4));
+
+                resultSet.close();
+                statement.close();
+
+                return supplier;
+            }
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+
+        }
+        return null;
+    }
+
+
+    public boolean deleteSupplier(int supplierID) {
+        try {
+            String query = "DELETE FROM Supplier WHERE supplierID = ?";
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, supplierID);
+
+
+            int rows = statement.executeUpdate();
+            statement.close();
+
+            return rows > 0;
 
         } catch (SQLException e) {
             System.out.println("Database access error!");

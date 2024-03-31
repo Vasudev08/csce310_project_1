@@ -26,7 +26,8 @@ shoes = ["Air Jordan", "Ultra Boost", "Classic Leather", "Chuck Taylor", "Future
 "GT-2000 10", "Mindblower", "Dynamight 2.0", "Air Force 1", "NMD_R1"]
 
 quantity = [1, 2, 3, 4, 5, 6]
-shoe_prices_df = pd.read_csv("D:/Vasudev_Agarwal/Work_Fun/1_Texas_AM/1_Spring_2024/CSCE 310/csce310_project_1/Shoe prices.csv")
+shoe_prices_df = pd.read_csv("D:/Vasudev_Agarwal/Work_Fun/1_Texas_AM/1_Spring_2024/CSCE 310/csce310_project_1/projectOneApp/Shoe prices.csv")
+# D:\Vasudev_Agarwal\Work_Fun\1_Texas_AM\1_Spring_2024\CSCE 310\csce310_project_1\projectOneApp\Shoe prices.csv
 
 shoe_prices = [float(price.replace('$', '').strip()) for price in shoe_prices_df["Price (USD)"]]
 model_list = shoe_prices_df["Model"].tolist()
@@ -109,7 +110,38 @@ for i in range(len(dates_in_year)):
         order_data.append((order_id, order_date, order_customer_id, order_product_id, order_quantity, order_cost))
 
 
+productPayement = []
+productOrder = []
 
+paymentOption = ['Credit', 'Debit', 'Cash']
+
+for i in range(5000):
+    order_id = 10000 + i
+    order_customer_id = random.choice(customer_ids)
+    order_date = dates_in_year[random.randint(1,365)].strftime("%Y-%m-%d")
+    order_cost = 0
+    payment = random.choice(paymentOption)
+
+
+
+
+    for j in range(random.randint(1, 5)):
+        order_product_id, order_product_price = random.choice(shoe_id_price)
+        order_quantity = random.randint(1,5)
+        order_cost += order_quantity * order_product_price
+#         order_data.append((order_id, order_date, order_customer_id, order_product_id, order_quantity, order_cost))
+        productOrder.append((order_id, order_product_id, order_quantity))
+
+    productPayement.append((order_id, order_date, order_customer_id, order_cost, payment))
+
+
+# print(productPayement)
+# print(productOrder)
+
+
+
+# Payement Table - orderID, orderDate, customerID, orderCost, paymentType
+# Order Table - OrderID, productID, orderQuantity
 # print(order_data)
     
 
@@ -122,8 +154,14 @@ for i in range(len(dates_in_year)):
 # cursor.executemany('''INSERT INTO Customer (customerID, customerName, customerAddress, customerPhone)
 #                    VALUES (?, ?, ?, ?)''', customer_data)
         
-cursor.executemany('''INSERT INTO Orders (orderID, orderDate, customerID, productID, orderQuantity, orderCost)
-                   VALUES (?, ?, ?, ?, ?, ?)''', order_data)
+# cursor.executemany('''INSERT INTO Orders (orderID, orderDate, customerID, productID, orderQuantity, orderCost)
+#                    VALUES (?, ?, ?, ?, ?, ?)''', order_data)
+
+# cursor.executemany('''INSERT INTO ProductOrder (orderID, orderDate, customerID, orderCost, paymentType)
+#                      VALUES (?, ?, ?, ?, ?)''', productPayement)
+
+cursor.executemany('''INSERT INTO ProductPayment (orderID, productID, orderQuantity)
+                  VALUES (?, ?, ?)''', productOrder)
 
 conn.commit()
 conn.close()
