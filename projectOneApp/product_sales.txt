@@ -1,0 +1,500 @@
+Product ID: 115
+Product Name: Authentic
+Total Quantity: 57
+Total Sale: 2850.0
+
+Product ID: 155
+Product Name: Era
+Total Quantity: 53
+Total Sale: 2915.0
+
+Product ID: 151
+Product Name: Adilette Cloudfoam
+Total Quantity: 90
+Total Sale: 3150.0
+
+Product ID: 178
+Product Name: Original Fitness
+Total Quantity: 54
+Total Sale: 3240.0
+
+Product ID: 179
+Product Name: Elite Flex
+Total Quantity: 55
+Total Sale: 3575.0
+
+Product ID: 138
+Product Name: Venom
+Total Quantity: 56
+Total Sale: 3640.0
+
+Product ID: 113
+Product Name: One Star
+Total Quantity: 49
+Total Sale: 3675.0
+
+Product ID: 125
+Product Name: Sk8-Hi
+Total Quantity: 54
+Total Sale: 3780.0
+
+Product ID: 139
+Product Name: Go Walk 5
+Total Quantity: 64
+Total Sale: 3840.0
+
+Product ID: 175
+Product Name: Era
+Total Quantity: 77
+Total Sale: 3850.0
+
+Product ID: 173
+Product Name: Jack Purcell
+Total Quantity: 60
+Total Sale: 3900.0
+
+Product ID: 159
+Product Name: Dynamight 2.0
+Total Quantity: 79
+Total Sale: 3950.0
+
+Product ID: 136
+Product Name: 574
+Total Quantity: 50
+Total Sale: 4000.0
+
+Product ID: 168
+Product Name: D-Formation
+Total Quantity: 63
+Total Sale: 4095.0
+
+Product ID: 184
+Product Name: Jack Purcell
+Total Quantity: 63
+Total Sale: 4095.0
+
+Product ID: 135
+Product Name: Slip-On
+Total Quantity: 85
+Total Sale: 4250.0
+
+Product ID: 129
+Product Name: D'Lites
+Total Quantity: 67
+Total Sale: 4355.0
+
+Product ID: 187
+Product Name: 574
+Total Quantity: 55
+Total Sale: 4400.0
+
+Product ID: 196
+Product Name: Era
+Total Quantity: 80
+Total Sale: 4400.0
+
+Product ID: 149
+Product Name: Go Walk 5
+Total Quantity: 74
+Total Sale: 4440.0
+
+Product ID: 186
+Product Name: SK8-Hi
+Total Quantity: 64
+Total Sale: 4480.0
+
+Product ID: 128
+Product Name: Mindblower
+Total Quantity: 60
+Total Sale: 4500.0
+
+Product ID: 172
+Product Name: Classic Nylon
+Total Quantity: 71
+Total Sale: 4615.0
+
+Product ID: 193
+Product Name: Classic Nylon
+Total Quantity: 71
+Total Sale: 4615.0
+
+Product ID: 145
+Product Name: Sk8-Hi
+Total Quantity: 67
+Total Sale: 4690.0
+
+Product ID: 124
+Product Name: Calibrate Runner
+Total Quantity: 59
+Total Sale: 4720.0
+
+Product ID: 146
+Product Name: 327
+Total Quantity: 48
+Total Sale: 4800.0
+
+Product ID: 108
+Product Name: Disruptor II
+Total Quantity: 75
+Total Sale: 4875.0
+
+Product ID: 199
+Product Name: Trailblazer
+Total Quantity: 75
+Total Sale: 4875.0
+
+Product ID: 104
+Product Name: Future Rider
+Total Quantity: 61
+Total Sale: 4880.0
+
+Product ID: 103
+Product Name: Chuck Taylor
+Total Quantity: 89
+Total Sale: 4895.0
+
+Product ID: 157
+Product Name: GT-2000 10
+Total Quantity: 41
+Total Sale: 4920.0
+
+Product ID: 189
+Product Name: Mindblower
+Total Quantity: 67
+Total Sale: 5025.0
+
+Product ID: 190
+Product Name: Max Cushioning
+Total Quantity: 69
+Total Sale: 5175.0
+
+Product ID: 105
+Product Name: Old Skool
+Total Quantity: 84
+Total Sale: 5460.0
+
+Product ID: 102
+Product Name: Classic Leather
+Total Quantity: 73
+Total Sale: 5475.0
+
+Product ID: 192
+Product Name: Harden Stepback
+Total Quantity: 70
+Total Sale: 5600.0
+
+Product ID: 111
+Product Name: Stan Smith
+Total Quantity: 72
+Total Sale: 5760.0
+
+Product ID: 158
+Product Name: Mindblower
+Total Quantity: 78
+Total Sale: 5850.0
+
+Product ID: 112
+Product Name: Club C 85
+Total Quantity: 84
+Total Sale: 5880.0
+
+Product ID: 123
+Product Name: Jack Purcell
+Total Quantity: 91
+Total Sale: 5915.0
+
+Product ID: 134
+Product Name: Future Rider Play
+Total Quantity: 66
+Total Sale: 5940.0
+
+Product ID: 165
+Product Name: Sk8-Hi
+Total Quantity: 86
+Total Sale: 6020.0
+
+Product ID: 163
+Product Name: Chuck 70
+Total Quantity: 71
+Total Sale: 6035.0
+
+Product ID: 143
+Product Name: Jack Purcell
+Total Quantity: 93
+Total Sale: 6045.0
+
+Product ID: 119
+Product Name: Arch Fit
+Total Quantity: 87
+Total Sale: 6090.0
+
+Product ID: 195
+Product Name: Calibrate Runner
+Total Quantity: 77
+Total Sale: 6160.0
+
+Product ID: 144
+Product Name: Suede Classic
+Total Quantity: 95
+Total Sale: 6175.0
+
+Product ID: 180
+Product Name: Blazer Low
+Total Quantity: 74
+Total Sale: 6290.0
+
+Product ID: 120
+Product Name: Air Force 1
+Total Quantity: 70
+Total Sale: 6300.0
+
+Product ID: 176
+Product Name: FuelCell Echo
+Total Quantity: 63
+Total Sale: 6300.0
+
+Product ID: 148
+Product Name: Original Fitness
+Total Quantity: 91
+Total Sale: 6370.0
+
+Product ID: 142
+Product Name: Zig Kinetica II
+Total Quantity: 54
+Total Sale: 6480.0
+
+Product ID: 153
+Product Name: Chuck 70
+Total Quantity: 78
+Total Sale: 6630.0
+
+Product ID: 118
+Product Name: Ray Tracer
+Total Quantity: 95
+Total Sale: 6650.0
+
+Product ID: 137
+Product Name: Gel-Kayano 27
+Total Quantity: 42
+Total Sale: 6720.0
+
+Product ID: 194
+Product Name: Chuck 70
+Total Quantity: 80
+Total Sale: 6800.0
+
+Product ID: 126
+Product Name: 327
+Total Quantity: 77
+Total Sale: 6930.0
+
+Product ID: 109
+Product Name: Go Run Razor 3
+Total Quantity: 65
+Total Sale: 7150.0
+
+Product ID: 150
+Product Name: Free RN 5.0
+Total Quantity: 73
+Total Sale: 7300.0
+
+Product ID: 160
+Product Name: Air Force 1
+Total Quantity: 83
+Total Sale: 7470.0
+
+Product ID: 140
+Product Name: Air Force 1
+Total Quantity: 84
+Total Sale: 7560.0
+
+Product ID: 174
+Product Name: Calibrate Runner
+Total Quantity: 67
+Total Sale: 8040.0
+
+Product ID: 164
+Product Name: Clyde All-Pro
+Total Quantity: 62
+Total Sale: 8060.0
+
+Product ID: 169
+Product Name: Max Cushioning
+Total Quantity: 90
+Total Sale: 8100.0
+
+Product ID: 181
+Product Name: Air Force 1
+Total Quantity: 90
+Total Sale: 8100.0
+
+Product ID: 154
+Product Name: Clyde All Pro
+Total Quantity: 63
+Total Sale: 8190.0
+
+Product ID: 122
+Product Name: Zig Kinetica II
+Total Quantity: 69
+Total Sale: 8280.0
+
+Product ID: 177
+Product Name: GT-2000 9
+Total Quantity: 72
+Total Sale: 8640.0
+
+Product ID: 133
+Product Name: Chuck 70
+Total Quantity: 102
+Total Sale: 8670.0
+
+Product ID: 197
+Product Name: FuelCell Propel V3
+Total Quantity: 89
+Total Sale: 8900.0
+
+Product ID: 147
+Product Name: Gel-Kayano 28
+Total Quantity: 56
+Total Sale: 8960.0
+
+Product ID: 152
+Product Name: Nano 9
+Total Quantity: 69
+Total Sale: 8970.0
+
+Product ID: 171
+Product Name: Yeezy Boost 350
+Total Quantity: 41
+Total Sale: 9020.0
+
+Product ID: 132
+Product Name: Nano 9
+Total Quantity: 70
+Total Sale: 9100.0
+
+Product ID: 114
+Product Name: RS-Fast
+Total Quantity: 83
+Total Sale: 9130.0
+
+Product ID: 188
+Product Name: Gel-Lyte III NS
+Total Quantity: 92
+Total Sale: 9200.0
+
+Product ID: 141
+Product Name: NMD_R1
+Total Quantity: 66
+Total Sale: 9240.0
+
+Product ID: 170
+Product Name: Air Max 90
+Total Quantity: 77
+Total Sale: 9240.0
+
+Product ID: 182
+Product Name: NMD_R1
+Total Quantity: 66
+Total Sale: 9240.0
+
+Product ID: 191
+Product Name: React Infinity Run Flyknit 2
+Total Quantity: 62
+Total Sale: 9920.0
+
+Product ID: 116
+Product Name: Fresh Foam 1080v11
+Total Quantity: 67
+Total Sale: 10050.0
+
+Product ID: 117
+Product Name: Gel-Nimbus 23
+Total Quantity: 67
+Total Sale: 10050.0
+
+Product ID: 121
+Product Name: NMD_R1
+Total Quantity: 72
+Total Sale: 10080.0
+
+Product ID: 167
+Product Name: Gel-Quantum 360
+Total Quantity: 66
+Total Sale: 11220.0
+
+Product ID: 161
+Product Name: NMD_R1
+Total Quantity: 87
+Total Sale: 11310.0
+
+Product ID: 166
+Product Name: Fresh Foam 1080v11
+Total Quantity: 76
+Total Sale: 11400.0
+
+Product ID: 185
+Product Name: Clyde All-Pro
+Total Quantity: 95
+Total Sale: 11400.0
+
+Product ID: 162
+Product Name: Nano X1
+Total Quantity: 89
+Total Sale: 11570.0
+
+Product ID: 107
+Product Name: Gel-Kayano 28
+Total Quantity: 73
+Total Sale: 11680.0
+
+Product ID: 130
+Product Name: Air Max 2090
+Total Quantity: 78
+Total Sale: 11700.0
+
+Product ID: 183
+Product Name: Nano X1
+Total Quantity: 90
+Total Sale: 11700.0
+
+Product ID: 106
+Product Name: 990v5
+Total Quantity: 73
+Total Sale: 12775.0
+
+Product ID: 101
+Product Name: Ultra Boost 21
+Total Quantity: 73
+Total Sale: 13140.0
+
+Product ID: 110
+Product Name: Air Max 270
+Total Quantity: 91
+Total Sale: 13650.0
+
+Product ID: 131
+Product Name: Adizero Adios 5
+Total Quantity: 81
+Total Sale: 13770.0
+
+Product ID: 100
+Product Name: Air Jordan 1
+Total Quantity: 87
+Total Sale: 14790.0
+
+Product ID: 198
+Product Name: Gel-Kayano 28 Lite-Show
+Total Quantity: 91
+Total Sale: 15470.0
+
+Product ID: 127
+Product Name: Gel-Quantum 180
+Total Quantity: 136
+Total Sale: 16320.0
+
+Product ID: 156
+Product Name: Fresh Foam More v2
+Total Quantity: 109
+Total Sale: 17985.0
+

@@ -1,9 +1,9 @@
-
 import Models.Customer;
 import Views.*;
 
-import javax.xml.crypto.Data;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Application {
     private static Application instance;
@@ -27,6 +27,8 @@ public class Application {
 
     private EditPaymentScreen editPaymentScreen = new EditPaymentScreen();
 
+    private SalesReportScreen salesReportScreen = new SalesReportScreen();
+
 
     private MainController mainController;
     private CustomerController customerController;
@@ -40,6 +42,10 @@ public class Application {
     private PaymentController paymentController;
 
     private EditOrderController editOrderController;
+
+    private EditPaymentController editPaymentController;
+
+    private SalesReportController salesReportController;
 
     public CustomerScreen getCustomerScreen() {
         return customerScreen;
@@ -61,6 +67,10 @@ public class Application {
 
     public SupplierScreen getSupplierScreen() {
         return supplierScreen;
+    }
+
+    public SalesReportScreen getSalesReportScreen() {
+        return salesReportScreen;
     }
 
     public MainScreen getMainScreen() {
@@ -118,6 +128,8 @@ public class Application {
         makeOrderController = new MakeOrderController(makeOrderScreen, paymentScreen,dataAccess);
         paymentController = new PaymentController(paymentScreen, dataAccess);
         editOrderController = new EditOrderController(editOrderScreen, dataAccess);
+        editPaymentController = new EditPaymentController(editPaymentScreen, dataAccess);
+        salesReportController = new SalesReportController(salesReportScreen, dataAccess);
 
         // TO-DO
         // Create an order screen where you input customer, input product and product quantity

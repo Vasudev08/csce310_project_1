@@ -1,8 +1,8 @@
-import Models.Customer;
-import Models.Orders;
-import Models.Product;
-import Models.Supplier;
+import Models.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -602,5 +602,202 @@ public class DataAccess {
         }
     }
 
+    public Payment loadPayment(int customerID) {
+        try {
+            String query = "SELECT * FROM CustomerPayment WHERE customerID = " + customerID;
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                Payment payment = new Payment();
+                payment.setCustomerCardNumber(resultSet.getString(2));
+                payment.setCustomerCardExpiry(resultSet.getString(3));
+
+                resultSet.close();
+                statement.close();
+
+                return payment;
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+//            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    public boolean updatePayment(Payment payment) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("UPDATE CustomerPayment SET customerID = ?, customerCardNumber = ?, customerCardExpiry = ? WHERE customerID = ?");
+            statement.setInt(1, payment.getCustomerID());
+            statement.setString(2, payment.getCustomerCardNumber());
+            statement.setString(3, payment.getCustomerCardExpiry());
+            statement.setInt(4, payment.getCustomerID());
+
+            int rows = statement.executeUpdate();
+            statement.close();
+            System.out.println((String.format("Payment Updated: %s", payment.getCustomerID())));
+
+            if (rows > 0) {
+                System.out.println("Payment Data Updated");
+                return true;
+            } else {
+                System.out.println("No Payment Found with the Given ID");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false; // cannot save!
+//            throw new RuntimeException(e);
+        }
+    }
+
+    public List<ProductSale> getTotalSalePerProduct(String startDate, String endDate, boolean sortDescending) {
+        List<ProductSale> productSales = new ArrayList<>();
+
+        try {
+            String query = "SELECT Product.productID, Product.productName, " +
+                    "SUM(ProductOrder.orderQuantity) AS totalQuantity, " +
+                    "SUM(ProductOrder.orderQuantity * Product.productCost) AS totalSale " +
+                    "FROM Product " +
+                    "JOIN ProductOrder ON Product.productID = ProductOrder.productID " +
+                    "JOIN ProductPayment ON ProductOrder.orderID = ProductPayment.orderID " +
+                    "WHERE ProductPayment.orderDate BETWEEN ? AND ? " +
+                    "GROUP BY Product.productID, Product.productName " + // Ensure there is a space here
+                    (sortDescending ? "ORDER BY totalSale DESC" : "ORDER BY totalSale ASC");
+
+
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, startDate);
+            statement.setString(2, endDate);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int productID = resultSet.getInt("productID");
+                String productName = resultSet.getString("productName");
+                int totalQuantity = resultSet.getInt("totalQuantity");
+                double totalSale = resultSet.getDouble("totalSale");
+
+                ProductSale productSale = new ProductSale(productID, productName, totalQuantity, totalSale);
+                productSales.add(productSale);
+            }
+
+            statement.close();
+            resultSet.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println(productSales.get(0).getProductID());
+        System.out.println(productSales.get(0).getProductName());
+
+        System.out.println(productSales.get(0).getTotalSale());
+
+        return productSales;
+    }
+
+    public List<CustomerSale> getTotalSalePerCustomer(String startDate, String endDate, boolean sortDescending) {
+        List<CustomerSale> customerSales = new ArrayList<>();
+
+        try {
+            String query = "SELECT c.customerID, c.customerName, SUM(p.orderCost) AS totalSale " +
+                    "FROM ProductPayment p " +
+                    "JOIN Customer c ON p.customerID = c.customerID " +
+                    "WHERE p.orderDate BETWEEN ? AND ? " +
+                    "GROUP BY c.customerID, c.customerName " +  // Added space here
+                    (sortDescending ? "ORDER BY totalSale DESC" : "ORDER BY totalSale ASC");
+
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, startDate);
+            statement.setString(2, endDate);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int customerID = resultSet.getInt("customerID");
+                String customerName = resultSet.getString("customerName");
+                double totalSale = resultSet.getDouble("totalSale");
+                CustomerSale customerSale = new CustomerSale(customerID, customerName, totalSale);
+                customerSales.add(customerSale);
+            }
+
+            statement.close();
+            resultSet.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        System.out.println(customerSales.get(0).getCustomerID());
+        System.out.println(customerSales.get(0).getCustomerName());
+
+        System.out.println(customerSales.get(0).getTotalSale());
+
+        return customerSales;
+    }
+
+
+    public void writeMonthlySalesToFile(String startDate, String endDate, boolean sortDescending, String fileName) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+//            writer.println("Inside getTotalSalePerMonth");
+//            writer.println(startDate);
+//            writer.println(endDate);
+            String query = "SELECT strftime('%Y-%m', orderDate) AS month, SUM(orderCost) AS totalSale " +
+                    "FROM ProductPayment " +
+                    "WHERE orderDate BETWEEN ? AND ? " +
+                    "GROUP BY month " +
+                    (sortDescending ? "ORDER BY totalSale DESC" : "ORDER BY totalSale ASC");
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, startDate);
+            statement.setString(2, endDate);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String month = resultSet.getString("month");
+                double totalSale = resultSet.getDouble("totalSale");
+                writer.println("Month: " + month + ", Total Sale: " + totalSale);
+            }
+
+            statement.close();
+            resultSet.close();
+        } catch (SQLException | IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void writeProductSalesToFile(List<ProductSale> productSales, String fileName) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+            for (ProductSale productSale : productSales) {
+                writer.println("Product ID: " + productSale.getProductID());
+                writer.println("Product Name: " + productSale.getProductName());
+                writer.println("Total Quantity: " + productSale.getTotalQuantity());
+                writer.println("Total Sale: " + productSale.getTotalSale());
+                writer.println(); // Add a blank line for separation
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    public void writeCustomerSalesToFile(List<CustomerSale> customerSales, String fileName) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+            for (CustomerSale customerSale : customerSales) {
+                writer.println("Customer ID: " + customerSale.getCustomerID());
+                writer.println("Customer Name: " + customerSale.getCustomerName());
+                writer.println("Total Sale: " + customerSale.getTotalSale());
+                writer.println(); // Add a blank line for separation
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
 
 }

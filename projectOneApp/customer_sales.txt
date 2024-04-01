@@ -1,0 +1,400 @@
+Customer ID: 6000
+Customer Name: Timothy Whitaker
+Total Sale: 15620.0
+
+Customer ID: 6055
+Customer Name: Gina Patel
+Total Sale: 14875.0
+
+Customer ID: 6014
+Customer Name: Tara Hansen
+Total Sale: 13875.0
+
+Customer ID: 6042
+Customer Name: Suzanne Hendrix
+Total Sale: 12535.0
+
+Customer ID: 6062
+Customer Name: Erin Carpenter
+Total Sale: 12450.0
+
+Customer ID: 6096
+Customer Name: Susan Mckenzie
+Total Sale: 11925.0
+
+Customer ID: 6049
+Customer Name: Joseph Moreno
+Total Sale: 11580.0
+
+Customer ID: 6076
+Customer Name: Sandra Gibson
+Total Sale: 11425.0
+
+Customer ID: 6001
+Customer Name: Dr. William Herrera DDS
+Total Sale: 11320.0
+
+Customer ID: 6072
+Customer Name: Maria Bennett
+Total Sale: 11290.0
+
+Customer ID: 6048
+Customer Name: John Glover
+Total Sale: 11280.0
+
+Customer ID: 6018
+Customer Name: Laura Torres
+Total Sale: 10950.0
+
+Customer ID: 6088
+Customer Name: David Blair
+Total Sale: 10925.0
+
+Customer ID: 6039
+Customer Name: Laura Costa
+Total Sale: 10880.0
+
+Customer ID: 6022
+Customer Name: William Ramos
+Total Sale: 10775.0
+
+Customer ID: 6081
+Customer Name: Lawrence Alexander
+Total Sale: 10735.0
+
+Customer ID: 6059
+Customer Name: Paula Smith
+Total Sale: 10340.0
+
+Customer ID: 6098
+Customer Name: Joshua Scott
+Total Sale: 10250.0
+
+Customer ID: 6031
+Customer Name: Katherine Jones
+Total Sale: 10185.0
+
+Customer ID: 6078
+Customer Name: Deborah Williamson
+Total Sale: 9980.0
+
+Customer ID: 6043
+Customer Name: Michelle Thompson
+Total Sale: 9875.0
+
+Customer ID: 6052
+Customer Name: Frederick Douglas
+Total Sale: 9525.0
+
+Customer ID: 6046
+Customer Name: Paula Ruiz
+Total Sale: 9385.0
+
+Customer ID: 6003
+Customer Name: Stephen Guerra
+Total Sale: 9085.0
+
+Customer ID: 6070
+Customer Name: Stacy Nguyen
+Total Sale: 9040.0
+
+Customer ID: 6092
+Customer Name: April Neal
+Total Sale: 9005.0
+
+Customer ID: 6095
+Customer Name: Edward Rodriguez
+Total Sale: 8900.0
+
+Customer ID: 6083
+Customer Name: Thomas Holt
+Total Sale: 8795.0
+
+Customer ID: 6045
+Customer Name: Brian Romero
+Total Sale: 8555.0
+
+Customer ID: 6004
+Customer Name: Jeffrey Hansen
+Total Sale: 8540.0
+
+Customer ID: 6099
+Customer Name: Melissa Obrien
+Total Sale: 8465.0
+
+Customer ID: 6016
+Customer Name: Pamela Baldwin
+Total Sale: 8275.0
+
+Customer ID: 6037
+Customer Name: Christy Collins
+Total Sale: 8140.0
+
+Customer ID: 6023
+Customer Name: Gina Branch
+Total Sale: 8070.0
+
+Customer ID: 6061
+Customer Name: Joann Brooks
+Total Sale: 8060.0
+
+Customer ID: 6035
+Customer Name: Teresa Hodges
+Total Sale: 8045.0
+
+Customer ID: 6051
+Customer Name: Dawn Valencia
+Total Sale: 8045.0
+
+Customer ID: 6047
+Customer Name: Brandy King
+Total Sale: 7920.0
+
+Customer ID: 6011
+Customer Name: Gabriel Vang
+Total Sale: 7810.0
+
+Customer ID: 6067
+Customer Name: Samantha Mccarthy
+Total Sale: 7760.0
+
+Customer ID: 6005
+Customer Name: Christopher Gilmore
+Total Sale: 7645.0
+
+Customer ID: 6064
+Customer Name: Molly Banks
+Total Sale: 7635.0
+
+Customer ID: 6020
+Customer Name: Matthew Williams
+Total Sale: 7590.0
+
+Customer ID: 6015
+Customer Name: Marie Osborne
+Total Sale: 7580.0
+
+Customer ID: 6026
+Customer Name: Stephanie Anderson
+Total Sale: 7325.0
+
+Customer ID: 6007
+Customer Name: Stephanie Austin
+Total Sale: 7290.0
+
+Customer ID: 6074
+Customer Name: Tammy Holmes
+Total Sale: 7250.0
+
+Customer ID: 6028
+Customer Name: Kimberly Brady
+Total Sale: 7140.0
+
+Customer ID: 6033
+Customer Name: Kevin Owens
+Total Sale: 7080.0
+
+Customer ID: 6094
+Customer Name: Nicole Hunt
+Total Sale: 6965.0
+
+Customer ID: 6030
+Customer Name: Antonio Mccoy
+Total Sale: 6720.0
+
+Customer ID: 6085
+Customer Name: Jamie Martin DDS
+Total Sale: 6715.0
+
+Customer ID: 6082
+Customer Name: George Montgomery
+Total Sale: 6595.0
+
+Customer ID: 6056
+Customer Name: Tanya Taylor
+Total Sale: 6480.0
+
+Customer ID: 6089
+Customer Name: Nicholas Boyd
+Total Sale: 6365.0
+
+Customer ID: 6075
+Customer Name: Justin Glenn
+Total Sale: 6310.0
+
+Customer ID: 6097
+Customer Name: Randy Ross
+Total Sale: 6230.0
+
+Customer ID: 6008
+Customer Name: Patricia Lester
+Total Sale: 6215.0
+
+Customer ID: 6038
+Customer Name: Lisa Miller
+Total Sale: 6125.0
+
+Customer ID: 6090
+Customer Name: Jennifer Contreras
+Total Sale: 6120.0
+
+Customer ID: 6012
+Customer Name: Anthony Osborn
+Total Sale: 6070.0
+
+Customer ID: 6063
+Customer Name: Michael Mendez
+Total Sale: 5955.0
+
+Customer ID: 6044
+Customer Name: Christopher Lane
+Total Sale: 5945.0
+
+Customer ID: 6019
+Customer Name: Frank Thomas
+Total Sale: 5935.0
+
+Customer ID: 6025
+Customer Name: Jeffery Barker
+Total Sale: 5915.0
+
+Customer ID: 6091
+Customer Name: Ryan Cohen
+Total Sale: 5880.0
+
+Customer ID: 6073
+Customer Name: Destiny Brady
+Total Sale: 5850.0
+
+Customer ID: 6077
+Customer Name: Rachel Wood
+Total Sale: 5840.0
+
+Customer ID: 6068
+Customer Name: Kim Hendricks
+Total Sale: 5595.0
+
+Customer ID: 6032
+Customer Name: Catherine Rose
+Total Sale: 5535.0
+
+Customer ID: 6009
+Customer Name: Mr. Timothy Greene
+Total Sale: 5500.0
+
+Customer ID: 6084
+Customer Name: Randall Ross
+Total Sale: 5420.0
+
+Customer ID: 6079
+Customer Name: Luis Snyder
+Total Sale: 5250.0
+
+Customer ID: 6093
+Customer Name: Daniel Wu
+Total Sale: 5200.0
+
+Customer ID: 6060
+Customer Name: Jeanette Powell
+Total Sale: 5170.0
+
+Customer ID: 6002
+Customer Name: Scott Lewis
+Total Sale: 5160.0
+
+Customer ID: 6029
+Customer Name: Seth Larsen
+Total Sale: 5155.0
+
+Customer ID: 6036
+Customer Name: Alvin Guzman
+Total Sale: 4935.0
+
+Customer ID: 6050
+Customer Name: Jessica Wood
+Total Sale: 4935.0
+
+Customer ID: 6017
+Customer Name: Joshua Nguyen
+Total Sale: 4915.0
+
+Customer ID: 6058
+Customer Name: Danielle Williams
+Total Sale: 4770.0
+
+Customer ID: 6086
+Customer Name: Tammie Salas
+Total Sale: 4750.0
+
+Customer ID: 6013
+Customer Name: Madeline Robles
+Total Sale: 4630.0
+
+Customer ID: 6034
+Customer Name: Dustin Carter
+Total Sale: 4630.0
+
+Customer ID: 6040
+Customer Name: Brent Graham
+Total Sale: 4590.0
+
+Customer ID: 6006
+Customer Name: Curtis Carlson
+Total Sale: 4550.0
+
+Customer ID: 6057
+Customer Name: Shawn Elliott
+Total Sale: 4505.0
+
+Customer ID: 6054
+Customer Name: Jasmine Roberts
+Total Sale: 4320.0
+
+Customer ID: 6087
+Customer Name: Melissa Crawford
+Total Sale: 4280.0
+
+Customer ID: 6027
+Customer Name: Christopher Garcia
+Total Sale: 4175.0
+
+Customer ID: 6071
+Customer Name: Carla Miller
+Total Sale: 3685.0
+
+Customer ID: 6053
+Customer Name: Mr. Timothy Curry
+Total Sale: 3650.0
+
+Customer ID: 6069
+Customer Name: Joshua Cruz
+Total Sale: 3515.0
+
+Customer ID: 6021
+Customer Name: Beth Cunningham
+Total Sale: 3485.0
+
+Customer ID: 6041
+Customer Name: Amanda Howell
+Total Sale: 3330.0
+
+Customer ID: 6080
+Customer Name: Bridget Jackson
+Total Sale: 3170.0
+
+Customer ID: 6066
+Customer Name: Gary Carr
+Total Sale: 3005.0
+
+Customer ID: 6065
+Customer Name: David Williams
+Total Sale: 2765.0
+
+Customer ID: 6010
+Customer Name: Elizabeth Perez
+Total Sale: 2445.0
+
+Customer ID: 6024
+Customer Name: Kimberly Harrington
+Total Sale: 2000.0
+

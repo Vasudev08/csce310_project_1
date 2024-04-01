@@ -1,0 +1,6 @@
+Inside getTotalSalePerMonth
+2024-01-31
+2024-03-31
+Month: 2024-03, Total Sale: 381890.0
+Month: 2024-02, Total Sale: 336795.0
+Month: 2024-01, Total Sale: 9590.0
